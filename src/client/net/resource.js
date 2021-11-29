@@ -664,7 +664,13 @@ spf.net.resource.canonicalize = function(type, url) {
  * @return {string} The compound key.
  */
 spf.net.resource.key = function(type, label, opt_group) {
-  return type + '-' + label + (opt_group ? '-' + opt_group : '');
+  var key = label + (opt_group ? '-' + opt_group : '');
+  var hash = 5381;
+  var i = key.length;
+  while (i) {
+    hash = (hash * 33) ^ key.charCodeAt(--i);
+  }
+  return type + '-' + (hash >>> 0).toString(16);
 };
 
 

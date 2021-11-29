@@ -1,5 +1,5 @@
 # Distribution files
-/dist
+#/dist
 
 # Build output and files
 /build
