@@ -198,6 +198,7 @@ spf.net.xhr.send = function(method, url, data, opt_options) {
  * @param {XMLHttpRequest} xhr The XHR object being sent.
  * @return {boolean}
  * @private
+ * @suppress {undefinedVars|missingProperties}
  */
 spf.net.xhr.isChunked_ = function(xhr) {
   if (xhr.responseType == 'json') {
@@ -219,8 +220,11 @@ spf.net.xhr.isChunked_ = function(xhr) {
   // the primary document was loaded with SPDY.  If the primary document
   // was loaded with SPDY, then most likely the XHR will be as well.
   var firefoxSpdy = xhr.getResponseHeader('X-Firefox-Spdy');
-  var loadTimes = window.chrome && chrome.loadTimes && chrome.loadTimes();
-  var chromeSpdy = loadTimes && loadTimes.wasFetchedViaSpdy;
+  var chromeSpdy = window.chrome && (window.PerformanceNavigationTiming
+      ? ['h2', 'hq'].includes(
+          performance.getEntriesByType('navigation')[0].nextHopProtocol
+        )
+      : chrome.loadTimes && chrome.loadTimes().wasFetchedViaSpdy);
   return !!(firefoxSpdy || chromeSpdy);
 };
 

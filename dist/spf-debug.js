@@ -1082,8 +1082,8 @@ function $spf$net$xhr$send$$($addContentTypeFormUrlEncoded_method$$2$$, $url$$61
         if (-1 < ($xhr$$.getResponseHeader("Transfer-Encoding") || "").toLowerCase().indexOf("chunked")) {
           $chunked$$ = !0;
         } else {
-          var $chunk$$1_firefoxSpdy$$inline_107_timing$$5$$ = $xhr$$.getResponseHeader("X-Firefox-Spdy"), $chromeSpdy$$inline_109_loadTimes$$inline_108$$ = window.chrome && chrome.loadTimes && chrome.loadTimes(), $chromeSpdy$$inline_109_loadTimes$$inline_108$$ = $chromeSpdy$$inline_109_loadTimes$$inline_108$$ && $chromeSpdy$$inline_109_loadTimes$$inline_108$$.wasFetchedViaSpdy;
-          $chunked$$ = !(!$chunk$$1_firefoxSpdy$$inline_107_timing$$5$$ && !$chromeSpdy$$inline_109_loadTimes$$inline_108$$);
+          var $chunk$$1_firefoxSpdy$$inline_107_timing$$5$$ = $xhr$$.getResponseHeader("X-Firefox-Spdy"), $chromeSpdy$$inline_108$$ = window.chrome && (window.$PerformanceNavigationTiming$ ? ["h2", "hq"].$includes$(performance.getEntriesByType("navigation")[0].$nextHopProtocol$) : chrome.loadTimes && chrome.loadTimes().wasFetchedViaSpdy);
+          $chunked$$ = !(!$chunk$$1_firefoxSpdy$$inline_107_timing$$5$$ && !$chromeSpdy$$inline_108$$);
         }
       }
       $options$$4$$.$onHeaders$ && $options$$4$$.$onHeaders$($xhr$$);
@@ -1114,74 +1114,74 @@ function $spf$net$xhr$send$$($addContentTypeFormUrlEncoded_method$$2$$, $url$$61
 var $spf$net$xhr$State$HEADERS_RECEIVED$$ = 2, $spf$net$xhr$State$LOADING$$ = 3, $spf$net$xhr$State$DONE$$ = 4;
 function $spf$nav$request$send$$($url$$62$$, $opt_options$$18$$) {
   $spf$debug$debug$$("nav.request.send ", $url$$62$$, $opt_options$$18$$);
-  var $fn$$inline_123_options$$5$$ = $opt_options$$18$$ || {};
-  $fn$$inline_123_options$$5$$.method = (($fn$$inline_123_options$$5$$.method || "GET") + "").toUpperCase();
-  $fn$$inline_123_options$$5$$.type = $fn$$inline_123_options$$5$$.type || "request";
-  var $path$$inline_116_timing$$6_url$$inline_111$$ = $url$$62$$, $ident$$inline_113_requestUrl_uid$$inline_200$$ = $spf$config$values$$["url-identifier"] || "";
-  if ($ident$$inline_113_requestUrl_uid$$inline_200$$) {
-    var $ident$$inline_113_requestUrl_uid$$inline_200$$ = $ident$$inline_113_requestUrl_uid$$inline_200$$.replace("__type__", $fn$$inline_123_options$$5$$.type || ""), $hashParts$$inline_114_hashVal$$inline_120$$ = $spf$string$partition$$($path$$inline_116_timing$$6_url$$inline_111$$, "#"), $configHeaders_handleComplete_queryParts$$inline_115_queryVal$$inline_118$$ = $spf$string$partition$$($hashParts$$inline_114_hashVal$$inline_120$$[0], "?"), $path$$inline_116_timing$$6_url$$inline_111$$ = $configHeaders_handleComplete_queryParts$$inline_115_queryVal$$inline_118$$[0], 
-    $cacheKey_cached_headers_querySep$$inline_117$$ = $configHeaders_handleComplete_queryParts$$inline_115_queryVal$$inline_118$$[1], $configHeaders_handleComplete_queryParts$$inline_115_queryVal$$inline_118$$ = $configHeaders_handleComplete_queryParts$$inline_115_queryVal$$inline_118$$[2], $hashSep$$inline_119_value$$56$$ = $hashParts$$inline_114_hashVal$$inline_120$$[1], $hashParts$$inline_114_hashVal$$inline_120$$ = $hashParts$$inline_114_hashVal$$inline_120$$[2];
-    if (0 == $ident$$inline_113_requestUrl_uid$$inline_200$$.lastIndexOf("?", 0)) {
-      $cacheKey_cached_headers_querySep$$inline_117$$ && ($ident$$inline_113_requestUrl_uid$$inline_200$$ = $ident$$inline_113_requestUrl_uid$$inline_200$$.replace("?", "&")), $configHeaders_handleComplete_queryParts$$inline_115_queryVal$$inline_118$$ += $ident$$inline_113_requestUrl_uid$$inline_200$$;
+  var $fn$$inline_122_options$$5$$ = $opt_options$$18$$ || {};
+  $fn$$inline_122_options$$5$$.method = (($fn$$inline_122_options$$5$$.method || "GET") + "").toUpperCase();
+  $fn$$inline_122_options$$5$$.type = $fn$$inline_122_options$$5$$.type || "request";
+  var $path$$inline_115_timing$$6_url$$inline_110$$ = $url$$62$$, $ident$$inline_112_requestUrl_uid$$inline_199$$ = $spf$config$values$$["url-identifier"] || "";
+  if ($ident$$inline_112_requestUrl_uid$$inline_199$$) {
+    var $ident$$inline_112_requestUrl_uid$$inline_199$$ = $ident$$inline_112_requestUrl_uid$$inline_199$$.replace("__type__", $fn$$inline_122_options$$5$$.type || ""), $hashParts$$inline_113_hashVal$$inline_119$$ = $spf$string$partition$$($path$$inline_115_timing$$6_url$$inline_110$$, "#"), $configHeaders_handleComplete_queryParts$$inline_114_queryVal$$inline_117$$ = $spf$string$partition$$($hashParts$$inline_113_hashVal$$inline_119$$[0], "?"), $path$$inline_115_timing$$6_url$$inline_110$$ = $configHeaders_handleComplete_queryParts$$inline_114_queryVal$$inline_117$$[0], 
+    $cacheKey_cached_headers_querySep$$inline_116$$ = $configHeaders_handleComplete_queryParts$$inline_114_queryVal$$inline_117$$[1], $configHeaders_handleComplete_queryParts$$inline_114_queryVal$$inline_117$$ = $configHeaders_handleComplete_queryParts$$inline_114_queryVal$$inline_117$$[2], $hashSep$$inline_118_value$$56$$ = $hashParts$$inline_113_hashVal$$inline_119$$[1], $hashParts$$inline_113_hashVal$$inline_119$$ = $hashParts$$inline_113_hashVal$$inline_119$$[2];
+    if (0 == $ident$$inline_112_requestUrl_uid$$inline_199$$.lastIndexOf("?", 0)) {
+      $cacheKey_cached_headers_querySep$$inline_116$$ && ($ident$$inline_112_requestUrl_uid$$inline_199$$ = $ident$$inline_112_requestUrl_uid$$inline_199$$.replace("?", "&")), $configHeaders_handleComplete_queryParts$$inline_114_queryVal$$inline_117$$ += $ident$$inline_112_requestUrl_uid$$inline_199$$;
     } else {
-      if (0 == $ident$$inline_113_requestUrl_uid$$inline_200$$.lastIndexOf(".", 0)) {
-        if ($spf$string$endsWith$$($path$$inline_116_timing$$6_url$$inline_111$$, "/")) {
-          $ident$$inline_113_requestUrl_uid$$inline_200$$ = "index" + $ident$$inline_113_requestUrl_uid$$inline_200$$;
+      if (0 == $ident$$inline_112_requestUrl_uid$$inline_199$$.lastIndexOf(".", 0)) {
+        if ($spf$string$endsWith$$($path$$inline_115_timing$$6_url$$inline_110$$, "/")) {
+          $ident$$inline_112_requestUrl_uid$$inline_199$$ = "index" + $ident$$inline_112_requestUrl_uid$$inline_199$$;
         } else {
-          var $ext$$inline_121$$ = $path$$inline_116_timing$$6_url$$inline_111$$.lastIndexOf(".");
-          -1 < $ext$$inline_121$$ && ($path$$inline_116_timing$$6_url$$inline_111$$ = $path$$inline_116_timing$$6_url$$inline_111$$.substring(0, $ext$$inline_121$$));
+          var $ext$$inline_120$$ = $path$$inline_115_timing$$6_url$$inline_110$$.lastIndexOf(".");
+          -1 < $ext$$inline_120$$ && ($path$$inline_115_timing$$6_url$$inline_110$$ = $path$$inline_115_timing$$6_url$$inline_110$$.substring(0, $ext$$inline_120$$));
         }
       } else {
-        $spf$string$endsWith$$($path$$inline_116_timing$$6_url$$inline_111$$, "/") && 0 == $ident$$inline_113_requestUrl_uid$$inline_200$$.lastIndexOf("/", 0) && ($ident$$inline_113_requestUrl_uid$$inline_200$$ = $ident$$inline_113_requestUrl_uid$$inline_200$$.substring(1));
+        $spf$string$endsWith$$($path$$inline_115_timing$$6_url$$inline_110$$, "/") && 0 == $ident$$inline_112_requestUrl_uid$$inline_199$$.lastIndexOf("/", 0) && ($ident$$inline_112_requestUrl_uid$$inline_199$$ = $ident$$inline_112_requestUrl_uid$$inline_199$$.substring(1));
       }
-      $path$$inline_116_timing$$6_url$$inline_111$$ += $ident$$inline_113_requestUrl_uid$$inline_200$$;
+      $path$$inline_115_timing$$6_url$$inline_110$$ += $ident$$inline_112_requestUrl_uid$$inline_199$$;
     }
-    $path$$inline_116_timing$$6_url$$inline_111$$ = $path$$inline_116_timing$$6_url$$inline_111$$ + $cacheKey_cached_headers_querySep$$inline_117$$ + $configHeaders_handleComplete_queryParts$$inline_115_queryVal$$inline_118$$ + $hashSep$$inline_119_value$$56$$ + $hashParts$$inline_114_hashVal$$inline_120$$;
+    $path$$inline_115_timing$$6_url$$inline_110$$ = $path$$inline_115_timing$$6_url$$inline_110$$ + $cacheKey_cached_headers_querySep$$inline_116$$ + $configHeaders_handleComplete_queryParts$$inline_114_queryVal$$inline_117$$ + $hashSep$$inline_118_value$$56$$ + $hashParts$$inline_113_hashVal$$inline_119$$;
   }
-  $ident$$inline_113_requestUrl_uid$$inline_200$$ = $spf$url$absolute$$($path$$inline_116_timing$$6_url$$inline_111$$);
-  $spf$debug$debug$$("    request url ", $ident$$inline_113_requestUrl_uid$$inline_200$$);
-  $path$$inline_116_timing$$6_url$$inline_111$$ = {};
-  $path$$inline_116_timing$$6_url$$inline_111$$.spfUrl = $ident$$inline_113_requestUrl_uid$$inline_200$$;
-  $path$$inline_116_timing$$6_url$$inline_111$$.startTime = $spf$now$$();
-  $path$$inline_116_timing$$6_url$$inline_111$$.fetchStart = $path$$inline_116_timing$$6_url$$inline_111$$.startTime;
-  $cacheKey_cached_headers_querySep$$inline_117$$ = $spf$nav$request$getCacheKey_$$($url$$62$$, $fn$$inline_123_options$$5$$.current, null, $fn$$inline_123_options$$5$$.type, !1);
-  $cacheKey_cached_headers_querySep$$inline_117$$ = $spf$nav$request$getCacheObject_$$($cacheKey_cached_headers_querySep$$inline_117$$, $fn$$inline_123_options$$5$$.current);
-  $path$$inline_116_timing$$6_url$$inline_111$$.spfPrefetched = !!$cacheKey_cached_headers_querySep$$inline_117$$ && "prefetch" == $cacheKey_cached_headers_querySep$$inline_117$$.type;
-  $path$$inline_116_timing$$6_url$$inline_111$$.spfCached = !!$cacheKey_cached_headers_querySep$$inline_117$$;
-  if ($cacheKey_cached_headers_querySep$$inline_117$$) {
-    var $fn$$inline_123_options$$5$$ = $spf$bind$$($spf$nav$request$handleResponseFromCache_$$, null, $url$$62$$, $fn$$inline_123_options$$5$$, $path$$inline_116_timing$$6_url$$inline_111$$, $cacheKey_cached_headers_querySep$$inline_117$$.key, $cacheKey_cached_headers_querySep$$inline_117$$.response), $chunking_headerId_key$$52_state$$inline_199_uid$$inline_124_xhrOpts$$;
-    $chunking_headerId_key$$52_state$$inline_199_uid$$inline_124_xhrOpts$$ = window._spf_state = window._spf_state || {};
-    $ident$$inline_113_requestUrl_uid$$inline_200$$ = parseInt($chunking_headerId_key$$52_state$$inline_199_uid$$inline_124_xhrOpts$$.uid, 10) || 0;
-    $ident$$inline_113_requestUrl_uid$$inline_200$$++;
-    $chunking_headerId_key$$52_state$$inline_199_uid$$inline_124_xhrOpts$$ = $chunking_headerId_key$$52_state$$inline_199_uid$$inline_124_xhrOpts$$.uid = $ident$$inline_113_requestUrl_uid$$inline_200$$;
-    $spf$async$defers_$$[$chunking_headerId_key$$52_state$$inline_199_uid$$inline_124_xhrOpts$$] = $fn$$inline_123_options$$5$$;
-    $spf$async$POSTMESSAGE_SUPPORTED_$$ ? window.postMessage($spf$async$PREFIX_$$ + $chunking_headerId_key$$52_state$$inline_199_uid$$inline_124_xhrOpts$$, "*") : window.setTimeout($spf$bind$$($spf$async$run_$$, null, $chunking_headerId_key$$52_state$$inline_199_uid$$inline_124_xhrOpts$$), 0);
+  $ident$$inline_112_requestUrl_uid$$inline_199$$ = $spf$url$absolute$$($path$$inline_115_timing$$6_url$$inline_110$$);
+  $spf$debug$debug$$("    request url ", $ident$$inline_112_requestUrl_uid$$inline_199$$);
+  $path$$inline_115_timing$$6_url$$inline_110$$ = {};
+  $path$$inline_115_timing$$6_url$$inline_110$$.spfUrl = $ident$$inline_112_requestUrl_uid$$inline_199$$;
+  $path$$inline_115_timing$$6_url$$inline_110$$.startTime = $spf$now$$();
+  $path$$inline_115_timing$$6_url$$inline_110$$.fetchStart = $path$$inline_115_timing$$6_url$$inline_110$$.startTime;
+  $cacheKey_cached_headers_querySep$$inline_116$$ = $spf$nav$request$getCacheKey_$$($url$$62$$, $fn$$inline_122_options$$5$$.current, null, $fn$$inline_122_options$$5$$.type, !1);
+  $cacheKey_cached_headers_querySep$$inline_116$$ = $spf$nav$request$getCacheObject_$$($cacheKey_cached_headers_querySep$$inline_116$$, $fn$$inline_122_options$$5$$.current);
+  $path$$inline_115_timing$$6_url$$inline_110$$.spfPrefetched = !!$cacheKey_cached_headers_querySep$$inline_116$$ && "prefetch" == $cacheKey_cached_headers_querySep$$inline_116$$.type;
+  $path$$inline_115_timing$$6_url$$inline_110$$.spfCached = !!$cacheKey_cached_headers_querySep$$inline_116$$;
+  if ($cacheKey_cached_headers_querySep$$inline_116$$) {
+    var $fn$$inline_122_options$$5$$ = $spf$bind$$($spf$nav$request$handleResponseFromCache_$$, null, $url$$62$$, $fn$$inline_122_options$$5$$, $path$$inline_115_timing$$6_url$$inline_110$$, $cacheKey_cached_headers_querySep$$inline_116$$.key, $cacheKey_cached_headers_querySep$$inline_116$$.response), $chunking_headerId_key$$52_state$$inline_198_uid$$inline_123_xhrOpts$$;
+    $chunking_headerId_key$$52_state$$inline_198_uid$$inline_123_xhrOpts$$ = window._spf_state = window._spf_state || {};
+    $ident$$inline_112_requestUrl_uid$$inline_199$$ = parseInt($chunking_headerId_key$$52_state$$inline_198_uid$$inline_123_xhrOpts$$.uid, 10) || 0;
+    $ident$$inline_112_requestUrl_uid$$inline_199$$++;
+    $chunking_headerId_key$$52_state$$inline_198_uid$$inline_123_xhrOpts$$ = $chunking_headerId_key$$52_state$$inline_198_uid$$inline_123_xhrOpts$$.uid = $ident$$inline_112_requestUrl_uid$$inline_199$$;
+    $spf$async$defers_$$[$chunking_headerId_key$$52_state$$inline_198_uid$$inline_123_xhrOpts$$] = $fn$$inline_122_options$$5$$;
+    $spf$async$POSTMESSAGE_SUPPORTED_$$ ? window.postMessage($spf$async$PREFIX_$$ + $chunking_headerId_key$$52_state$$inline_198_uid$$inline_123_xhrOpts$$, "*") : window.setTimeout($spf$bind$$($spf$async$run_$$, null, $chunking_headerId_key$$52_state$$inline_198_uid$$inline_123_xhrOpts$$), 0);
     return null;
   }
   $spf$debug$debug$$("    sending XHR");
-  $cacheKey_cached_headers_querySep$$inline_117$$ = {};
-  if ($configHeaders_handleComplete_queryParts$$inline_115_queryVal$$inline_118$$ = $spf$config$values$$["request-headers"]) {
-    for ($chunking_headerId_key$$52_state$$inline_199_uid$$inline_124_xhrOpts$$ in $configHeaders_handleComplete_queryParts$$inline_115_queryVal$$inline_118$$) {
-      $hashSep$$inline_119_value$$56$$ = $configHeaders_handleComplete_queryParts$$inline_115_queryVal$$inline_118$$[$chunking_headerId_key$$52_state$$inline_199_uid$$inline_124_xhrOpts$$], $cacheKey_cached_headers_querySep$$inline_117$$[$chunking_headerId_key$$52_state$$inline_199_uid$$inline_124_xhrOpts$$] = null == $hashSep$$inline_119_value$$56$$ ? "" : String($hashSep$$inline_119_value$$56$$);
+  $cacheKey_cached_headers_querySep$$inline_116$$ = {};
+  if ($configHeaders_handleComplete_queryParts$$inline_114_queryVal$$inline_117$$ = $spf$config$values$$["request-headers"]) {
+    for ($chunking_headerId_key$$52_state$$inline_198_uid$$inline_123_xhrOpts$$ in $configHeaders_handleComplete_queryParts$$inline_114_queryVal$$inline_117$$) {
+      $hashSep$$inline_118_value$$56$$ = $configHeaders_handleComplete_queryParts$$inline_114_queryVal$$inline_117$$[$chunking_headerId_key$$52_state$$inline_198_uid$$inline_123_xhrOpts$$], $cacheKey_cached_headers_querySep$$inline_116$$[$chunking_headerId_key$$52_state$$inline_198_uid$$inline_123_xhrOpts$$] = null == $hashSep$$inline_118_value$$56$$ ? "" : String($hashSep$$inline_118_value$$56$$);
     }
   }
-  if ($fn$$inline_123_options$$5$$.headers) {
-    for ($chunking_headerId_key$$52_state$$inline_199_uid$$inline_124_xhrOpts$$ in $fn$$inline_123_options$$5$$.headers) {
-      $hashSep$$inline_119_value$$56$$ = $fn$$inline_123_options$$5$$.headers[$chunking_headerId_key$$52_state$$inline_199_uid$$inline_124_xhrOpts$$], $cacheKey_cached_headers_querySep$$inline_117$$[$chunking_headerId_key$$52_state$$inline_199_uid$$inline_124_xhrOpts$$] = null == $hashSep$$inline_119_value$$56$$ ? "" : String($hashSep$$inline_119_value$$56$$);
+  if ($fn$$inline_122_options$$5$$.headers) {
+    for ($chunking_headerId_key$$52_state$$inline_198_uid$$inline_123_xhrOpts$$ in $fn$$inline_122_options$$5$$.headers) {
+      $hashSep$$inline_118_value$$56$$ = $fn$$inline_122_options$$5$$.headers[$chunking_headerId_key$$52_state$$inline_198_uid$$inline_123_xhrOpts$$], $cacheKey_cached_headers_querySep$$inline_116$$[$chunking_headerId_key$$52_state$$inline_198_uid$$inline_123_xhrOpts$$] = null == $hashSep$$inline_118_value$$56$$ ? "" : String($hashSep$$inline_118_value$$56$$);
     }
   }
-  null != $fn$$inline_123_options$$5$$.$referer$ && ($cacheKey_cached_headers_querySep$$inline_117$$["X-SPF-Referer"] = $fn$$inline_123_options$$5$$.$referer$);
-  null != $fn$$inline_123_options$$5$$.current && ($cacheKey_cached_headers_querySep$$inline_117$$["X-SPF-Previous"] = $fn$$inline_123_options$$5$$.current);
-  if ($chunking_headerId_key$$52_state$$inline_199_uid$$inline_124_xhrOpts$$ = $spf$config$values$$["advanced-header-identifier"]) {
-    $cacheKey_cached_headers_querySep$$inline_117$$["X-SPF-Request"] = $chunking_headerId_key$$52_state$$inline_199_uid$$inline_124_xhrOpts$$.replace("__type__", $fn$$inline_123_options$$5$$.type), $cacheKey_cached_headers_querySep$$inline_117$$.Accept = "application/json";
+  null != $fn$$inline_122_options$$5$$.$referer$ && ($cacheKey_cached_headers_querySep$$inline_116$$["X-SPF-Referer"] = $fn$$inline_122_options$$5$$.$referer$);
+  null != $fn$$inline_122_options$$5$$.current && ($cacheKey_cached_headers_querySep$$inline_116$$["X-SPF-Previous"] = $fn$$inline_122_options$$5$$.current);
+  if ($chunking_headerId_key$$52_state$$inline_198_uid$$inline_123_xhrOpts$$ = $spf$config$values$$["advanced-header-identifier"]) {
+    $cacheKey_cached_headers_querySep$$inline_116$$["X-SPF-Request"] = $chunking_headerId_key$$52_state$$inline_198_uid$$inline_123_xhrOpts$$.replace("__type__", $fn$$inline_122_options$$5$$.type), $cacheKey_cached_headers_querySep$$inline_116$$.Accept = "application/json";
   }
-  $chunking_headerId_key$$52_state$$inline_199_uid$$inline_124_xhrOpts$$ = new $spf$nav$request$Chunking_$$;
-  $configHeaders_handleComplete_queryParts$$inline_115_queryVal$$inline_118$$ = $spf$bind$$($spf$nav$request$handleCompleteFromXHR_$$, null, $url$$62$$, $fn$$inline_123_options$$5$$, $path$$inline_116_timing$$6_url$$inline_111$$, $chunking_headerId_key$$52_state$$inline_199_uid$$inline_124_xhrOpts$$);
-  $chunking_headerId_key$$52_state$$inline_199_uid$$inline_124_xhrOpts$$ = {headers:$cacheKey_cached_headers_querySep$$inline_117$$, $timeoutMs$:$spf$config$values$$["request-timeout"], $onHeaders$:$spf$bind$$($spf$nav$request$handleHeadersFromXHR_$$, null, $url$$62$$, $chunking_headerId_key$$52_state$$inline_199_uid$$inline_124_xhrOpts$$), $onChunk$:$spf$bind$$($spf$nav$request$handleChunkFromXHR_$$, null, $url$$62$$, $fn$$inline_123_options$$5$$, $path$$inline_116_timing$$6_url$$inline_111$$, $chunking_headerId_key$$52_state$$inline_199_uid$$inline_124_xhrOpts$$), 
-  $onDone$:$configHeaders_handleComplete_queryParts$$inline_115_queryVal$$inline_118$$, $onTimeout$:$configHeaders_handleComplete_queryParts$$inline_115_queryVal$$inline_118$$};
-  $fn$$inline_123_options$$5$$.withCredentials && ($chunking_headerId_key$$52_state$$inline_199_uid$$inline_124_xhrOpts$$.withCredentials = $fn$$inline_123_options$$5$$.withCredentials);
-  $spf$config$values$$["advanced-response-type-json"] && ($chunking_headerId_key$$52_state$$inline_199_uid$$inline_124_xhrOpts$$.responseType = "json");
-  return "POST" == $fn$$inline_123_options$$5$$.method ? $spf$net$xhr$send$$("POST", $ident$$inline_113_requestUrl_uid$$inline_200$$, $fn$$inline_123_options$$5$$.$postData$, $chunking_headerId_key$$52_state$$inline_199_uid$$inline_124_xhrOpts$$) : $spf$net$xhr$send$$("GET", $ident$$inline_113_requestUrl_uid$$inline_200$$, null, $chunking_headerId_key$$52_state$$inline_199_uid$$inline_124_xhrOpts$$);
+  $chunking_headerId_key$$52_state$$inline_198_uid$$inline_123_xhrOpts$$ = new $spf$nav$request$Chunking_$$;
+  $configHeaders_handleComplete_queryParts$$inline_114_queryVal$$inline_117$$ = $spf$bind$$($spf$nav$request$handleCompleteFromXHR_$$, null, $url$$62$$, $fn$$inline_122_options$$5$$, $path$$inline_115_timing$$6_url$$inline_110$$, $chunking_headerId_key$$52_state$$inline_198_uid$$inline_123_xhrOpts$$);
+  $chunking_headerId_key$$52_state$$inline_198_uid$$inline_123_xhrOpts$$ = {headers:$cacheKey_cached_headers_querySep$$inline_116$$, $timeoutMs$:$spf$config$values$$["request-timeout"], $onHeaders$:$spf$bind$$($spf$nav$request$handleHeadersFromXHR_$$, null, $url$$62$$, $chunking_headerId_key$$52_state$$inline_198_uid$$inline_123_xhrOpts$$), $onChunk$:$spf$bind$$($spf$nav$request$handleChunkFromXHR_$$, null, $url$$62$$, $fn$$inline_122_options$$5$$, $path$$inline_115_timing$$6_url$$inline_110$$, $chunking_headerId_key$$52_state$$inline_198_uid$$inline_123_xhrOpts$$), 
+  $onDone$:$configHeaders_handleComplete_queryParts$$inline_114_queryVal$$inline_117$$, $onTimeout$:$configHeaders_handleComplete_queryParts$$inline_114_queryVal$$inline_117$$};
+  $fn$$inline_122_options$$5$$.withCredentials && ($chunking_headerId_key$$52_state$$inline_198_uid$$inline_123_xhrOpts$$.withCredentials = $fn$$inline_122_options$$5$$.withCredentials);
+  $spf$config$values$$["advanced-response-type-json"] && ($chunking_headerId_key$$52_state$$inline_198_uid$$inline_123_xhrOpts$$.responseType = "json");
+  return "POST" == $fn$$inline_122_options$$5$$.method ? $spf$net$xhr$send$$("POST", $ident$$inline_112_requestUrl_uid$$inline_199$$, $fn$$inline_122_options$$5$$.$postData$, $chunking_headerId_key$$52_state$$inline_198_uid$$inline_123_xhrOpts$$) : $spf$net$xhr$send$$("GET", $ident$$inline_112_requestUrl_uid$$inline_199$$, null, $chunking_headerId_key$$52_state$$inline_198_uid$$inline_123_xhrOpts$$);
 }
 function $spf$nav$request$handleResponseFromCache_$$($url$$63$$, $options$$6$$, $timing$$7$$, $cacheKey$$1$$, $response$$5$$) {
   $spf$debug$debug$$("nav.request.handleResponseFromCache_ ", $url$$63$$, $response$$5$$);
@@ -1288,8 +1288,8 @@ function $spf$nav$request$done_$$($url$$67$$, $options$$9$$, $timing$$10$$, $res
   $spf$debug$debug$$("nav.request.done_", $url$$67$$, $options$$9$$, $timing$$10$$, $response$$7$$, $cache_cacheKey$$2$$);
   if ($cache_cacheKey$$2$$ && "POST" != $options$$9$$.method && ($cache_cacheKey$$2$$ = $spf$nav$request$getCacheKey_$$($url$$67$$, $options$$9$$.current, $response$$7$$.cacheType, $options$$9$$.type, !0))) {
     $response$$7$$.cacheKey = $cache_cacheKey$$2$$;
-    var $data$$inline_203_unit$$inline_224$$ = {response:$response$$7$$, type:$options$$9$$.type || ""}, $lifetime$$inline_204$$ = parseInt($spf$config$values$$["cache-lifetime"], 10), $JSCompiler_temp_const$$220_max$$inline_205$$ = parseInt($spf$config$values$$["cache-max"], 10);
-    0 >= $lifetime$$inline_204$$ || 0 >= $JSCompiler_temp_const$$220_max$$inline_205$$ || ($JSCompiler_temp_const$$220_max$$inline_205$$ = $spf$cache$storage_$$(), $data$$inline_203_unit$$inline_224$$ = {data:$data$$inline_203_unit$$inline_224$$, life:$lifetime$$inline_204$$, time:$spf$now$$(), count:0}, $spf$cache$updateCount_$$($data$$inline_203_unit$$inline_224$$), $JSCompiler_temp_const$$220_max$$inline_205$$[$cache_cacheKey$$2$$] = $data$$inline_203_unit$$inline_224$$, setTimeout($spf$cache$collect$$, 
+    var $data$$inline_202_unit$$inline_223$$ = {response:$response$$7$$, type:$options$$9$$.type || ""}, $lifetime$$inline_203$$ = parseInt($spf$config$values$$["cache-lifetime"], 10), $JSCompiler_temp_const$$219_max$$inline_204$$ = parseInt($spf$config$values$$["cache-max"], 10);
+    0 >= $lifetime$$inline_203$$ || 0 >= $JSCompiler_temp_const$$219_max$$inline_204$$ || ($JSCompiler_temp_const$$219_max$$inline_204$$ = $spf$cache$storage_$$(), $data$$inline_202_unit$$inline_223$$ = {data:$data$$inline_202_unit$$inline_223$$, life:$lifetime$$inline_203$$, time:$spf$now$$(), count:0}, $spf$cache$updateCount_$$($data$$inline_202_unit$$inline_223$$), $JSCompiler_temp_const$$219_max$$inline_204$$[$cache_cacheKey$$2$$] = $data$$inline_202_unit$$inline_223$$, setTimeout($spf$cache$collect$$, 
     1E3));
   }
   $response$$7$$.timing = $timing$$10$$;
@@ -1308,22 +1308,22 @@ function $spf$nav$request$getCacheObject_$$($cacheKey$$4$$, $opt_current$$1$$) {
   $keys$$.push($cacheKey$$4$$);
   var $cacheValue$$ = null;
   $spf$array$some$$($keys$$, function($key$$54$$) {
-    var $obj$$21_storage$$inline_131_unit$$inline_132$$;
+    var $obj$$21_storage$$inline_130_unit$$inline_131$$;
     a: {
-      $obj$$21_storage$$inline_131_unit$$inline_132$$ = $spf$cache$storage_$$();
-      if ($key$$54$$ in $obj$$21_storage$$inline_131_unit$$inline_132$$) {
-        $obj$$21_storage$$inline_131_unit$$inline_132$$ = $obj$$21_storage$$inline_131_unit$$inline_132$$[$key$$54$$];
-        if ($spf$cache$valid_$$($obj$$21_storage$$inline_131_unit$$inline_132$$)) {
-          $spf$cache$updateCount_$$($obj$$21_storage$$inline_131_unit$$inline_132$$);
-          $obj$$21_storage$$inline_131_unit$$inline_132$$ = $obj$$21_storage$$inline_131_unit$$inline_132$$.data;
+      $obj$$21_storage$$inline_130_unit$$inline_131$$ = $spf$cache$storage_$$();
+      if ($key$$54$$ in $obj$$21_storage$$inline_130_unit$$inline_131$$) {
+        $obj$$21_storage$$inline_130_unit$$inline_131$$ = $obj$$21_storage$$inline_130_unit$$inline_131$$[$key$$54$$];
+        if ($spf$cache$valid_$$($obj$$21_storage$$inline_130_unit$$inline_131$$)) {
+          $spf$cache$updateCount_$$($obj$$21_storage$$inline_130_unit$$inline_131$$);
+          $obj$$21_storage$$inline_130_unit$$inline_131$$ = $obj$$21_storage$$inline_130_unit$$inline_131$$.data;
           break a;
         }
         $spf$cache$remove$$($key$$54$$);
       }
-      $obj$$21_storage$$inline_131_unit$$inline_132$$ = void 0;
+      $obj$$21_storage$$inline_130_unit$$inline_131$$ = void 0;
     }
-    $obj$$21_storage$$inline_131_unit$$inline_132$$ && ($cacheValue$$ = {key:$key$$54$$, response:$obj$$21_storage$$inline_131_unit$$inline_132$$.response, type:$obj$$21_storage$$inline_131_unit$$inline_132$$.type});
-    return!!$obj$$21_storage$$inline_131_unit$$inline_132$$;
+    $obj$$21_storage$$inline_130_unit$$inline_131$$ && ($cacheValue$$ = {key:$key$$54$$, response:$obj$$21_storage$$inline_130_unit$$inline_131$$.response, type:$obj$$21_storage$$inline_130_unit$$inline_131$$.type});
+    return!!$obj$$21_storage$$inline_130_unit$$inline_131$$;
   });
   return $cacheValue$$;
 }
@@ -1409,45 +1409,45 @@ function $spf$nav$handleMouseDown_$$($evt$$28$$) {
   }, 0);
 }
 function $spf$nav$handleScroll_$$() {
-  var $position_position$$inline_134$$;
-  $position_position$$inline_134$$ = $spf$state$values_$$["nav-scroll-position"] || null;
-  var $url$$inline_135$$ = $spf$state$values_$$["nav-scroll-url"] || "";
-  $position_position$$inline_134$$ = $position_position$$inline_134$$ && $url$$inline_135$$ == window.location.href ? $position_position$$inline_134$$ : null;
+  var $position_position$$inline_133$$;
+  $position_position$$inline_133$$ = $spf$state$values_$$["nav-scroll-position"] || null;
+  var $url$$inline_134$$ = $spf$state$values_$$["nav-scroll-url"] || "";
+  $position_position$$inline_133$$ = $position_position$$inline_133$$ && $url$$inline_134$$ == window.location.href ? $position_position$$inline_133$$ : null;
   $spf$nav$clearScrollTempPosition_$$();
-  $position_position$$inline_134$$ && ($spf$debug$debug$$("    returning to saved scroll temp position", $position_position$$inline_134$$), window.scroll.apply(null, $position_position$$inline_134$$));
+  $position_position$$inline_133$$ && ($spf$debug$debug$$("    returning to saved scroll temp position", $position_position$$inline_133$$), window.scroll.apply(null, $position_position$$inline_133$$));
 }
 function $spf$nav$handleHistory_$$($url$$74$$, $opt_state$$3$$) {
   $spf$debug$debug$$("nav.handleHistory ", "(url=", $url$$74$$, "state=", $opt_state$$3$$, ")");
-  var $info$$1$$ = new $spf$nav$Info$$({current:$opt_state$$3$$ && $opt_state$$3$$["spf-current"], history:!0, position:$opt_state$$3$$ && $opt_state$$3$$["spf-position"], $referer$:$opt_state$$3$$ && $opt_state$$3$$["spf-referer"], reverse:!(!$opt_state$$3$$ || !$opt_state$$3$$["spf-back"])}), $position$$inline_137_reloadId$$ = $spf$config$values$$["reload-identifier"];
-  $position$$inline_137_reloadId$$ && ($url$$74$$ = $spf$url$removeParameters$$($url$$74$$, [$position$$inline_137_reloadId$$]));
-  $spf$nav$isAllowed_$$($url$$74$$) ? $spf$nav$isEligible_$$() ? $spf$dispatch$$("spfhistory", {url:$url$$74$$, referer:$info$$1$$.$referer$, previous:$info$$1$$.current}) && ($info$$1$$.position && ($position$$inline_137_reloadId$$ = [window.pageXOffset, window.pageYOffset], $spf$debug$debug$$("    saving scroll temp position", $position$$inline_137_reloadId$$), $spf$state$set$$("nav-scroll-position", $position$$inline_137_reloadId$$), $spf$state$set$$("nav-scroll-url", window.location.href)), $spf$nav$navigate_$$($url$$74$$, 
+  var $info$$1$$ = new $spf$nav$Info$$({current:$opt_state$$3$$ && $opt_state$$3$$["spf-current"], history:!0, position:$opt_state$$3$$ && $opt_state$$3$$["spf-position"], $referer$:$opt_state$$3$$ && $opt_state$$3$$["spf-referer"], reverse:!(!$opt_state$$3$$ || !$opt_state$$3$$["spf-back"])}), $position$$inline_136_reloadId$$ = $spf$config$values$$["reload-identifier"];
+  $position$$inline_136_reloadId$$ && ($url$$74$$ = $spf$url$removeParameters$$($url$$74$$, [$position$$inline_136_reloadId$$]));
+  $spf$nav$isAllowed_$$($url$$74$$) ? $spf$nav$isEligible_$$() ? $spf$dispatch$$("spfhistory", {url:$url$$74$$, referer:$info$$1$$.$referer$, previous:$info$$1$$.current}) && ($info$$1$$.position && ($position$$inline_136_reloadId$$ = [window.pageXOffset, window.pageYOffset], $spf$debug$debug$$("    saving scroll temp position", $position$$inline_136_reloadId$$), $spf$state$set$$("nav-scroll-position", $position$$inline_136_reloadId$$), $spf$state$set$$("nav-scroll-url", window.location.href)), $spf$nav$navigate_$$($url$$74$$, 
   {}, $info$$1$$)) : $spf$nav$reload$$($url$$74$$, $spf$nav$ReloadReason$INELIGIBLE$$) : $spf$nav$reload$$($url$$74$$, $spf$nav$ReloadReason$FORBIDDEN$$);
 }
-function $spf$nav$navigate_$$($url$$76$$, $options$$13_xhr$$inline_156$$, $info$$3$$) {
-  $spf$debug$info$$("nav.navigate_ ", $url$$76$$, $options$$13_xhr$$inline_156$$, $info$$3$$);
+function $spf$nav$navigate_$$($url$$76$$, $options$$13_xhr$$inline_155$$, $info$$3$$) {
+  $spf$debug$info$$("nav.navigate_ ", $url$$76$$, $options$$13_xhr$$inline_155$$, $info$$3$$);
   $spf$nav$cancel$$();
   if ($spf$nav$isNavigable_$$($url$$76$$, $info$$3$$.current)) {
-    if ($spf$nav$dispatchRequest_$$($url$$76$$, $info$$3$$.$referer$, $info$$3$$.current, $options$$13_xhr$$inline_156$$)) {
+    if ($spf$nav$dispatchRequest_$$($url$$76$$, $info$$3$$.$referer$, $info$$3$$.current, $options$$13_xhr$$inline_155$$)) {
       $spf$state$set$$("nav-counter", (parseInt($spf$state$values_$$["nav-counter"], 10) || 0) + 1);
       $spf$nav$cancelAllPrefetchesExcept$$($url$$76$$);
-      var $absoluteUrl$$2_handleError$$inline_153_prefetchXhr_preprocessKey$$inline_147$$ = $spf$url$absolute$$($url$$76$$), $handlePart$$inline_154_opt_skipKey$$inline_139_promoteKey$$inline_148$$ = "preprocess " + $spf$url$absolute$$($absoluteUrl$$2_handleError$$inline_153_prefetchXhr_preprocessKey$$inline_147$$), $handleSuccess$$inline_155_key$$inline_142$$;
-      for ($handleSuccess$$inline_155_key$$inline_142$$ in $spf$tasks$queues_$$) {
-        $handlePart$$inline_154_opt_skipKey$$inline_139_promoteKey$$inline_148$$ != $handleSuccess$$inline_155_key$$inline_142$$ && 0 == $handleSuccess$$inline_155_key$$inline_142$$.lastIndexOf("preprocess", 0) && $spf$tasks$cancel$$($handleSuccess$$inline_155_key$$inline_142$$);
+      var $absoluteUrl$$2_handleError$$inline_152_prefetchXhr_preprocessKey$$inline_146$$ = $spf$url$absolute$$($url$$76$$), $handlePart$$inline_153_opt_skipKey$$inline_138_promoteKey$$inline_147$$ = "preprocess " + $spf$url$absolute$$($absoluteUrl$$2_handleError$$inline_152_prefetchXhr_preprocessKey$$inline_146$$), $handleSuccess$$inline_154_key$$inline_141$$;
+      for ($handleSuccess$$inline_154_key$$inline_141$$ in $spf$tasks$queues_$$) {
+        $handlePart$$inline_153_opt_skipKey$$inline_138_promoteKey$$inline_147$$ != $handleSuccess$$inline_154_key$$inline_141$$ && 0 == $handleSuccess$$inline_154_key$$inline_141$$.lastIndexOf("preprocess", 0) && $spf$tasks$cancel$$($handleSuccess$$inline_154_key$$inline_141$$);
       }
-      $absoluteUrl$$2_handleError$$inline_153_prefetchXhr_preprocessKey$$inline_147$$ = $spf$nav$prefetches_$$()[$absoluteUrl$$2_handleError$$inline_153_prefetchXhr_preprocessKey$$inline_147$$];
-      $spf$state$set$$("nav-request", $absoluteUrl$$2_handleError$$inline_153_prefetchXhr_preprocessKey$$inline_147$$);
+      $absoluteUrl$$2_handleError$$inline_152_prefetchXhr_preprocessKey$$inline_146$$ = $spf$nav$prefetches_$$()[$absoluteUrl$$2_handleError$$inline_152_prefetchXhr_preprocessKey$$inline_146$$];
+      $spf$state$set$$("nav-request", $absoluteUrl$$2_handleError$$inline_152_prefetchXhr_preprocessKey$$inline_146$$);
       $spf$state$set$$("nav-promote", null);
       $spf$state$set$$("nav-promote-time", null);
-      $absoluteUrl$$2_handleError$$inline_153_prefetchXhr_preprocessKey$$inline_147$$ && 4 != $absoluteUrl$$2_handleError$$inline_153_prefetchXhr_preprocessKey$$inline_147$$.readyState ? ($spf$debug$debug$$("nav.navigatePromotePrefetch_ ", $url$$76$$), $absoluteUrl$$2_handleError$$inline_153_prefetchXhr_preprocessKey$$inline_147$$ = "preprocess " + $spf$url$absolute$$($url$$76$$), $handlePart$$inline_154_opt_skipKey$$inline_139_promoteKey$$inline_148$$ = "promote " + $spf$url$absolute$$($url$$76$$), 
-      $spf$state$set$$("nav-promote", $url$$76$$), $spf$state$set$$("nav-promote-time", $spf$now$$()), $spf$tasks$cancel$$($absoluteUrl$$2_handleError$$inline_153_prefetchXhr_preprocessKey$$inline_147$$), $spf$tasks$run$$($handlePart$$inline_154_opt_skipKey$$inline_139_promoteKey$$inline_148$$, !0), $info$$3$$.history || $spf$nav$navigateAddHistory_$$($url$$76$$, $info$$3$$.$referer$, $spf$bind$$($spf$nav$handleNavigateError_$$, null, $options$$13_xhr$$inline_156$$))) : ($absoluteUrl$$2_handleError$$inline_153_prefetchXhr_preprocessKey$$inline_147$$ = 
-      $spf$bind$$($spf$nav$handleNavigateError_$$, null, $options$$13_xhr$$inline_156$$), $handlePart$$inline_154_opt_skipKey$$inline_139_promoteKey$$inline_148$$ = $spf$bind$$($spf$nav$handleNavigatePart_$$, null, $options$$13_xhr$$inline_156$$, $info$$3$$), $handleSuccess$$inline_155_key$$inline_142$$ = $spf$bind$$($spf$nav$handleNavigateSuccess_$$, null, $options$$13_xhr$$inline_156$$, $info$$3$$), $spf$config$values$$["advanced-navigate-persist-timing"] || $spf$nav$clearResourceTimings_$$(), 
-      $info$$3$$.type = "navigate", $info$$3$$.history && ($info$$3$$.type += $info$$3$$.reverse ? "-back" : "-forward"), $options$$13_xhr$$inline_156$$ = $spf$nav$request$send$$($url$$76$$, {method:$options$$13_xhr$$inline_156$$.method, headers:$options$$13_xhr$$inline_156$$.headers, $onPart$:$handlePart$$inline_154_opt_skipKey$$inline_139_promoteKey$$inline_148$$, $onError$:$absoluteUrl$$2_handleError$$inline_153_prefetchXhr_preprocessKey$$inline_147$$, $onSuccess$:$handleSuccess$$inline_155_key$$inline_142$$, 
-      $postData$:$options$$13_xhr$$inline_156$$.postData, type:$info$$3$$.type, current:$info$$3$$.current, $referer$:$info$$3$$.$referer$}), $spf$state$set$$("nav-request", $options$$13_xhr$$inline_156$$), $info$$3$$.history || $spf$nav$navigateAddHistory_$$($url$$76$$, $info$$3$$.$referer$, $absoluteUrl$$2_handleError$$inline_153_prefetchXhr_preprocessKey$$inline_147$$));
+      $absoluteUrl$$2_handleError$$inline_152_prefetchXhr_preprocessKey$$inline_146$$ && 4 != $absoluteUrl$$2_handleError$$inline_152_prefetchXhr_preprocessKey$$inline_146$$.readyState ? ($spf$debug$debug$$("nav.navigatePromotePrefetch_ ", $url$$76$$), $absoluteUrl$$2_handleError$$inline_152_prefetchXhr_preprocessKey$$inline_146$$ = "preprocess " + $spf$url$absolute$$($url$$76$$), $handlePart$$inline_153_opt_skipKey$$inline_138_promoteKey$$inline_147$$ = "promote " + $spf$url$absolute$$($url$$76$$), 
+      $spf$state$set$$("nav-promote", $url$$76$$), $spf$state$set$$("nav-promote-time", $spf$now$$()), $spf$tasks$cancel$$($absoluteUrl$$2_handleError$$inline_152_prefetchXhr_preprocessKey$$inline_146$$), $spf$tasks$run$$($handlePart$$inline_153_opt_skipKey$$inline_138_promoteKey$$inline_147$$, !0), $info$$3$$.history || $spf$nav$navigateAddHistory_$$($url$$76$$, $info$$3$$.$referer$, $spf$bind$$($spf$nav$handleNavigateError_$$, null, $options$$13_xhr$$inline_155$$))) : ($absoluteUrl$$2_handleError$$inline_152_prefetchXhr_preprocessKey$$inline_146$$ = 
+      $spf$bind$$($spf$nav$handleNavigateError_$$, null, $options$$13_xhr$$inline_155$$), $handlePart$$inline_153_opt_skipKey$$inline_138_promoteKey$$inline_147$$ = $spf$bind$$($spf$nav$handleNavigatePart_$$, null, $options$$13_xhr$$inline_155$$, $info$$3$$), $handleSuccess$$inline_154_key$$inline_141$$ = $spf$bind$$($spf$nav$handleNavigateSuccess_$$, null, $options$$13_xhr$$inline_155$$, $info$$3$$), $spf$config$values$$["advanced-navigate-persist-timing"] || $spf$nav$clearResourceTimings_$$(), 
+      $info$$3$$.type = "navigate", $info$$3$$.history && ($info$$3$$.type += $info$$3$$.reverse ? "-back" : "-forward"), $options$$13_xhr$$inline_155$$ = $spf$nav$request$send$$($url$$76$$, {method:$options$$13_xhr$$inline_155$$.method, headers:$options$$13_xhr$$inline_155$$.headers, $onPart$:$handlePart$$inline_153_opt_skipKey$$inline_138_promoteKey$$inline_147$$, $onError$:$absoluteUrl$$2_handleError$$inline_152_prefetchXhr_preprocessKey$$inline_146$$, $onSuccess$:$handleSuccess$$inline_154_key$$inline_141$$, 
+      $postData$:$options$$13_xhr$$inline_155$$.postData, type:$info$$3$$.type, current:$info$$3$$.current, $referer$:$info$$3$$.$referer$}), $spf$state$set$$("nav-request", $options$$13_xhr$$inline_155$$), $info$$3$$.history || $spf$nav$navigateAddHistory_$$($url$$76$$, $info$$3$$.$referer$, $absoluteUrl$$2_handleError$$inline_152_prefetchXhr_preprocessKey$$inline_146$$));
     } else {
       $spf$nav$reload$$($url$$76$$, $spf$nav$ReloadReason$REQUEST_CANCELED$$);
     }
   } else {
-    $spf$debug$debug$$("non-navigable, just scroll"), $info$$3$$.history || $spf$nav$navigateAddHistory_$$($url$$76$$, $info$$3$$.$referer$, $spf$bind$$($spf$nav$handleNavigateError_$$, null, $options$$13_xhr$$inline_156$$)), $spf$nav$navigateScroll_$$($url$$76$$, $info$$3$$);
+    $spf$debug$debug$$("non-navigable, just scroll"), $info$$3$$.history || $spf$nav$navigateAddHistory_$$($url$$76$$, $info$$3$$.$referer$, $spf$bind$$($spf$nav$handleNavigateError_$$, null, $options$$13_xhr$$inline_155$$)), $spf$nav$navigateScroll_$$($url$$76$$, $info$$3$$);
   }
 }
 function $spf$nav$navigateScroll_$$($url$$79$$, $info$$6$$) {
@@ -1463,12 +1463,12 @@ function $spf$nav$navigateScroll_$$($url$$79$$, $info$$6$$) {
     }
   }
 }
-function $spf$nav$navigateAddHistory_$$($url$$80$$, $opt_state$$inline_159_referer$$, $handleError$$3$$) {
+function $spf$nav$navigateAddHistory_$$($url$$80$$, $opt_state$$inline_158_referer$$, $handleError$$3$$) {
   try {
     var $position$$1$$ = [window.pageXOffset, window.pageYOffset], $updateState$$ = {"spf-position":$position$$1$$};
     $spf$debug$debug$$("    updating history to scroll position", $position$$1$$);
     $spf$history$replace$$(null, $updateState$$);
-    $spf$url$absolute$$($url$$80$$, !0) != window.location.href && ($opt_state$$inline_159_referer$$ = {"spf-referer":$opt_state$$inline_159_referer$$}, $spf$debug$info$$("history.add ", $url$$80$$), $spf$history$push_$$(!1, $url$$80$$, $opt_state$$inline_159_referer$$, void 0));
+    $spf$url$absolute$$($url$$80$$, !0) != window.location.href && ($opt_state$$inline_158_referer$$ = {"spf-referer":$opt_state$$inline_158_referer$$}, $spf$debug$info$$("history.add ", $url$$80$$), $spf$history$push_$$(!1, $url$$80$$, $opt_state$$inline_158_referer$$, void 0));
   } catch ($err$$4$$) {
     $spf$nav$cancel$$(), $spf$debug$error$$("error caught, redirecting ", "(url=", $url$$80$$, "err=", $err$$4$$, ")"), $handleError$$3$$($url$$80$$, $err$$4$$);
   }
@@ -1562,15 +1562,15 @@ function $spf$nav$reload$$($url$$84$$, $reason$$, $err$$9_opt_err$$) {
   var $current$$3$$ = window.location.href;
   $spf$config$values$$["experimental-remove-history"] && $current$$3$$ == $url$$84$$ && ($spf$state$set$$("history-ignore-pop", !0), window.history.back());
   setTimeout(function() {
-    var $reloadId$$1_url$$inline_166$$ = $spf$config$values$$["reload-identifier"];
-    if ($reloadId$$1_url$$inline_166$$) {
+    var $reloadId$$1_url$$inline_165$$ = $spf$config$values$$["reload-identifier"];
+    if ($reloadId$$1_url$$inline_165$$) {
       var $params$$ = {};
-      $params$$[$reloadId$$1_url$$inline_166$$] = encodeURIComponent($reason$$);
-      var $reloadId$$1_url$$inline_166$$ = $url$$84$$, $result$$inline_168$$ = $spf$string$partition$$($reloadId$$1_url$$inline_166$$, "#"), $reloadId$$1_url$$inline_166$$ = $result$$inline_168$$[0], $delim$$inline_169$$ = -1 != $reloadId$$1_url$$inline_166$$.indexOf("?") ? "&" : "?", $key$$inline_170$$;
-      for ($key$$inline_170$$ in $params$$) {
-        $reloadId$$1_url$$inline_166$$ += $delim$$inline_169$$ + $key$$inline_170$$, $params$$[$key$$inline_170$$] && ($reloadId$$1_url$$inline_166$$ += "=" + $params$$[$key$$inline_170$$]), $delim$$inline_169$$ = "&";
+      $params$$[$reloadId$$1_url$$inline_165$$] = encodeURIComponent($reason$$);
+      var $reloadId$$1_url$$inline_165$$ = $url$$84$$, $result$$inline_167$$ = $spf$string$partition$$($reloadId$$1_url$$inline_165$$, "#"), $reloadId$$1_url$$inline_165$$ = $result$$inline_167$$[0], $delim$$inline_168$$ = -1 != $reloadId$$1_url$$inline_165$$.indexOf("?") ? "&" : "?", $key$$inline_169$$;
+      for ($key$$inline_169$$ in $params$$) {
+        $reloadId$$1_url$$inline_165$$ += $delim$$inline_168$$ + $key$$inline_169$$, $params$$[$key$$inline_169$$] && ($reloadId$$1_url$$inline_165$$ += "=" + $params$$[$key$$inline_169$$]), $delim$$inline_168$$ = "&";
       }
-      $url$$84$$ = $reloadId$$1_url$$inline_166$$ + $result$$inline_168$$[1] + $result$$inline_168$$[2];
+      $url$$84$$ = $reloadId$$1_url$$inline_165$$ + $result$$inline_167$$[1] + $result$$inline_167$$[2];
     }
     window.location.href = $url$$84$$;
     $spf$nav$isNavigable_$$($url$$84$$, $current$$3$$) || window.location.reload();
@@ -1589,16 +1589,16 @@ function $spf$nav$prefetch$$($url$$87$$, $opt_options$$21$$) {
   $url$$87$$ = $spf$url$appendPersistentParameters$$($url$$87$$);
   $spf$nav$prefetch_$$($url$$87$$, $opt_options$$21$$ || {}, new $spf$nav$Info$$);
 }
-function $spf$nav$prefetch_$$($absoluteUrl$$inline_174_url$$88$$, $options$$23_xhr$$inline_173$$, $info$$12$$) {
-  $spf$debug$info$$("nav.prefetch ", $absoluteUrl$$inline_174_url$$88$$, $options$$23_xhr$$inline_173$$, $info$$12$$);
-  $info$$12$$.$original$ = $info$$12$$.$original$ || $absoluteUrl$$inline_174_url$$88$$;
-  if ($spf$nav$dispatchRequest_$$($absoluteUrl$$inline_174_url$$88$$, void 0, void 0, $options$$23_xhr$$inline_173$$, !0)) {
-    var $handleError$$5$$ = $spf$bind$$($spf$nav$handleLoadError_$$, null, !0, $options$$23_xhr$$inline_173$$, $info$$12$$), $handlePart$$2$$ = $spf$bind$$($spf$nav$handleLoadPart_$$, null, !0, $options$$23_xhr$$inline_173$$, $info$$12$$), $handleSuccess$$2$$ = $spf$bind$$($spf$nav$handleLoadSuccess_$$, null, !0, $options$$23_xhr$$inline_173$$, $info$$12$$);
+function $spf$nav$prefetch_$$($absoluteUrl$$inline_173_url$$88$$, $options$$23_xhr$$inline_172$$, $info$$12$$) {
+  $spf$debug$info$$("nav.prefetch ", $absoluteUrl$$inline_173_url$$88$$, $options$$23_xhr$$inline_172$$, $info$$12$$);
+  $info$$12$$.$original$ = $info$$12$$.$original$ || $absoluteUrl$$inline_173_url$$88$$;
+  if ($spf$nav$dispatchRequest_$$($absoluteUrl$$inline_173_url$$88$$, void 0, void 0, $options$$23_xhr$$inline_172$$, !0)) {
+    var $handleError$$5$$ = $spf$bind$$($spf$nav$handleLoadError_$$, null, !0, $options$$23_xhr$$inline_172$$, $info$$12$$), $handlePart$$2$$ = $spf$bind$$($spf$nav$handleLoadPart_$$, null, !0, $options$$23_xhr$$inline_172$$, $info$$12$$), $handleSuccess$$2$$ = $spf$bind$$($spf$nav$handleLoadSuccess_$$, null, !0, $options$$23_xhr$$inline_172$$, $info$$12$$);
     $info$$12$$.type = "prefetch";
-    $options$$23_xhr$$inline_173$$ = $spf$nav$request$send$$($absoluteUrl$$inline_174_url$$88$$, {method:$options$$23_xhr$$inline_173$$.method, headers:$options$$23_xhr$$inline_173$$.headers, $onPart$:$handlePart$$2$$, $onError$:$handleError$$5$$, $onSuccess$:$handleSuccess$$2$$, $postData$:$options$$23_xhr$$inline_173$$.postData, type:$info$$12$$.type, current:$info$$12$$.current});
-    $spf$debug$debug$$("nav.addPrefetch ", $absoluteUrl$$inline_174_url$$88$$, $options$$23_xhr$$inline_173$$);
-    $absoluteUrl$$inline_174_url$$88$$ = $spf$url$absolute$$($absoluteUrl$$inline_174_url$$88$$);
-    $spf$nav$prefetches_$$()[$absoluteUrl$$inline_174_url$$88$$] = $options$$23_xhr$$inline_173$$;
+    $options$$23_xhr$$inline_172$$ = $spf$nav$request$send$$($absoluteUrl$$inline_173_url$$88$$, {method:$options$$23_xhr$$inline_172$$.method, headers:$options$$23_xhr$$inline_172$$.headers, $onPart$:$handlePart$$2$$, $onError$:$handleError$$5$$, $onSuccess$:$handleSuccess$$2$$, $postData$:$options$$23_xhr$$inline_172$$.postData, type:$info$$12$$.type, current:$info$$12$$.current});
+    $spf$debug$debug$$("nav.addPrefetch ", $absoluteUrl$$inline_173_url$$88$$, $options$$23_xhr$$inline_172$$);
+    $absoluteUrl$$inline_173_url$$88$$ = $spf$url$absolute$$($absoluteUrl$$inline_173_url$$88$$);
+    $spf$nav$prefetches_$$()[$absoluteUrl$$inline_173_url$$88$$] = $options$$23_xhr$$inline_172$$;
   }
 }
 function $spf$nav$handleLoadError_$$($isPrefetch$$, $options$$24$$, $info$$13$$, $url$$89$$, $err$$10$$) {
@@ -1725,8 +1725,8 @@ function $spf$nav$cancelAllPrefetchesExcept$$($absoluteUrl$$5_opt_skipUrl$$) {
     $absoluteUrl$$5_opt_skipUrl$$ != $key$$56$$ && $spf$nav$removePrefetch$$($key$$56$$);
   }
 }
-var $spf$nav$clearResourceTimings_$$, $clearResourceTimings$$inline_176$$ = window.performance && (window.performance.clearResourceTimings || window.performance.webkitClearResourceTimings || window.performance.mozClearResourceTimings || window.performance.msClearResourceTimings || window.performance.oClearResourceTimings);
-$spf$nav$clearResourceTimings_$$ = $clearResourceTimings$$inline_176$$ ? $spf$bind$$($clearResourceTimings$$inline_176$$, window.performance) : $spf$nullFunction$$;
+var $spf$nav$clearResourceTimings_$$, $clearResourceTimings$$inline_175$$ = window.performance && (window.performance.clearResourceTimings || window.performance.webkitClearResourceTimings || window.performance.mozClearResourceTimings || window.performance.msClearResourceTimings || window.performance.oClearResourceTimings);
+$spf$nav$clearResourceTimings_$$ = $clearResourceTimings$$inline_175$$ ? $spf$bind$$($clearResourceTimings$$inline_175$$, window.performance) : $spf$nullFunction$$;
 function $spf$nav$prefetches_$$() {
   return "nav-prefetches" in $spf$state$values_$$ ? $spf$state$values_$$["nav-prefetches"] : $spf$state$set$$("nav-prefetches", {});
 }
@@ -1754,32 +1754,32 @@ function $spf$main$discover_$$() {
 }
 document.addEventListener ? document.addEventListener("DOMContentLoaded", $spf$main$discover_$$, !1) : document.attachEvent && document.attachEvent("onreadystatechange", $spf$main$discover_$$);
 $spf$main$discover_$$();
-var $spf$main$api_$$ = {init:function($config$$inline_181_opt_config$$1_url$$inline_215$$) {
+var $spf$main$api_$$ = {init:function($config$$inline_180_opt_config$$1_url$$inline_214$$) {
   var $enable$$ = !("function" != typeof window.history.pushState && !$spf$history$getIframe$$().contentWindow.history.pushState);
   $spf$debug$info$$("main.init ", "enable=", $enable$$);
-  $config$$inline_181_opt_config$$1_url$$inline_215$$ = $config$$inline_181_opt_config$$1_url$$inline_215$$ || {};
-  for (var $errorCallback$$inline_214_key$$inline_182$$ in $spf$config$defaults$$) {
-    $spf$config$values$$[$errorCallback$$inline_214_key$$inline_182$$] = $errorCallback$$inline_214_key$$inline_182$$ in $config$$inline_181_opt_config$$1_url$$inline_215$$ ? $config$$inline_181_opt_config$$1_url$$inline_215$$[$errorCallback$$inline_214_key$$inline_182$$] : $spf$config$defaults$$[$errorCallback$$inline_214_key$$inline_182$$];
+  $config$$inline_180_opt_config$$1_url$$inline_214$$ = $config$$inline_180_opt_config$$1_url$$inline_214$$ || {};
+  for (var $errorCallback$$inline_213_key$$inline_181$$ in $spf$config$defaults$$) {
+    $spf$config$values$$[$errorCallback$$inline_213_key$$inline_181$$] = $errorCallback$$inline_213_key$$inline_181$$ in $config$$inline_180_opt_config$$1_url$$inline_214$$ ? $config$$inline_180_opt_config$$1_url$$inline_214$$[$errorCallback$$inline_213_key$$inline_181$$] : $spf$config$defaults$$[$errorCallback$$inline_213_key$$inline_181$$];
   }
-  for ($errorCallback$$inline_214_key$$inline_182$$ in $config$$inline_181_opt_config$$1_url$$inline_215$$) {
-    $errorCallback$$inline_214_key$$inline_182$$ in $spf$config$defaults$$ || ($spf$config$values$$[$errorCallback$$inline_214_key$$inline_182$$] = $config$$inline_181_opt_config$$1_url$$inline_215$$[$errorCallback$$inline_214_key$$inline_182$$]);
+  for ($errorCallback$$inline_213_key$$inline_181$$ in $config$$inline_180_opt_config$$1_url$$inline_214$$) {
+    $errorCallback$$inline_213_key$$inline_181$$ in $spf$config$defaults$$ || ($spf$config$values$$[$errorCallback$$inline_213_key$$inline_181$$] = $config$$inline_180_opt_config$$1_url$$inline_214$$[$errorCallback$$inline_213_key$$inline_181$$]);
   }
   if ($enable$$) {
-    $errorCallback$$inline_214_key$$inline_182$$ = $spf$nav$dispatchError_$$;
+    $errorCallback$$inline_213_key$$inline_181$$ = $spf$nav$dispatchError_$$;
     if (!$spf$state$values_$$["history-init"] && window.addEventListener) {
-      $config$$inline_181_opt_config$$1_url$$inline_215$$ = window.location.href;
+      $config$$inline_180_opt_config$$1_url$$inline_214$$ = window.location.href;
       window.addEventListener("popstate", $spf$history$pop_$$, !1);
       $spf$state$set$$("history-init", !0);
       $spf$state$set$$("history-callback", $spf$nav$handleHistory_$$);
-      $spf$state$set$$("history-error-callback", $errorCallback$$inline_214_key$$inline_182$$);
+      $spf$state$set$$("history-error-callback", $errorCallback$$inline_213_key$$inline_181$$);
       $spf$state$set$$("history-listener", $spf$history$pop_$$);
-      $spf$state$set$$("history-url", $config$$inline_181_opt_config$$1_url$$inline_215$$);
+      $spf$state$set$$("history-url", $config$$inline_180_opt_config$$1_url$$inline_214$$);
       $spf$state$set$$("history-timestamp", $spf$now$$());
-      var $historyState$$inline_216$$ = {"spf-referer":document.referrer};
+      var $historyState$$inline_215$$ = {"spf-referer":document.referrer};
       try {
-        $spf$history$replace$$($config$$inline_181_opt_config$$1_url$$inline_215$$, $historyState$$inline_216$$);
-      } catch ($err$$inline_217$$) {
-        $errorCallback$$inline_214_key$$inline_182$$ && $errorCallback$$inline_214_key$$inline_182$$($config$$inline_181_opt_config$$1_url$$inline_215$$, $err$$inline_217$$);
+        $spf$history$replace$$($config$$inline_180_opt_config$$1_url$$inline_214$$, $historyState$$inline_215$$);
+      } catch ($err$$inline_216$$) {
+        $errorCallback$$inline_213_key$$inline_181$$ && $errorCallback$$inline_213_key$$inline_181$$($config$$inline_180_opt_config$$1_url$$inline_214$$, $err$$inline_216$$);
       }
     }
     !$spf$state$values_$$["nav-init"] && document.addEventListener && ($spf$state$set$$("nav-init", !0), $spf$state$set$$("nav-init-time", $spf$now$$()), $spf$state$set$$("nav-counter", 0), document.addEventListener("click", $spf$nav$handleClick_$$, !1), $spf$state$set$$("nav-listener", $spf$nav$handleClick_$$), !$spf$config$values$$["experimental-prefetch-mousedown"] || "ontouchstart" in window || 0 < window.navigator.maxTouchPoints || 0 < window.navigator.msMaxTouchPoints || (document.addEventListener("mousedown", 
@@ -1790,8 +1790,8 @@ var $spf$main$api_$$ = {init:function($config$$inline_181_opt_config$$1_url$$inl
   "undefined" != typeof History && History.prototype.pushState && ($spf$nav$cancel$$(), $spf$state$values_$$["nav-init"] && (document.removeEventListener && (document.removeEventListener("click", $spf$state$values_$$["nav-listener"], !1), document.removeEventListener("mousedown", $spf$state$values_$$["nav-mousedown-listener"], !1), document.removeEventListener("scroll", $spf$state$values_$$["nav-scroll-listener"], !1)), $spf$state$set$$("nav-listener", null), $spf$state$set$$("nav-mousedown-listener", 
   null), $spf$state$set$$("nav-scroll-listener", null), $spf$state$set$$("nav-scroll-position", null), $spf$state$set$$("nav-scroll-url", null), $spf$state$set$$("nav-init", !1), $spf$state$set$$("nav-init-time", null), $spf$state$set$$("nav-counter", null)), $spf$state$values_$$["history-init"] && (window.removeEventListener && window.removeEventListener("popstate", $spf$state$values_$$["history-listener"], !1), $spf$state$set$$("history-init", !1), $spf$state$set$$("history-callback", null), $spf$state$set$$("history-error-callback", 
   null), $spf$state$set$$("history-listener", null), $spf$state$set$$("history-url", null), $spf$state$set$$("history-timestamp", 0)));
-  for (var $key$$inline_186$$ in $spf$config$values$$) {
-    delete $spf$config$values$$[$key$$inline_186$$];
+  for (var $key$$inline_185$$ in $spf$config$values$$) {
+    delete $spf$config$values$$[$key$$inline_185$$];
   }
 }, navigate:function($url$$75$$, $opt_options$$19$$) {
   $spf$debug$debug$$("nav.navigate ", "(url=", $url$$75$$, "options=", $opt_options$$19$$, ")");
