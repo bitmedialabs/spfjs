@@ -220,10 +220,11 @@ spf.net.xhr.isChunked_ = function(xhr) {
   // the primary document was loaded with SPDY.  If the primary document
   // was loaded with SPDY, then most likely the XHR will be as well.
   var firefoxSpdy = xhr.getResponseHeader('X-Firefox-Spdy');
-  var chromeSpdy = window.chrome && (window.PerformanceNavigationTiming
-      ? ['h2', 'hq'].includes(
-          performance.getEntriesByType('navigation')[0].nextHopProtocol
-        )
+  var navTiming = window.performance &&
+      window.performance.getEntriesByType &&
+      window.performance.getEntriesByType('navigation')[0];
+  var chromeSpdy = window.chrome && (window['PerformanceNavigationTiming']
+      ? navTiming && ['h2', 'hq'].indexOf(navTiming['nextHopProtocol']) > -1
       : chrome.loadTimes && chrome.loadTimes().wasFetchedViaSpdy);
   return !!(firefoxSpdy || chromeSpdy);
 };

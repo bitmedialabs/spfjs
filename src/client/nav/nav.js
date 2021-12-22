@@ -100,6 +100,9 @@ spf.nav.dispose = function() {
  * @private
  */
 spf.nav.getAncestorWithLinkClass_ = function(element) {
+  if (element['closest']) {
+    return element['closest']('.' + spf.config.get('link-class'));
+  }
   return spf.dom.getAncestor(element, function(node) {
     return spf.dom.classlist.contains(node, /** @type {string} */ (
         spf.config.get('link-class')));
@@ -116,6 +119,9 @@ spf.nav.getAncestorWithLinkClass_ = function(element) {
  * @private
  */
 spf.nav.getAncestorWithNoLinkClass_ = function(element) {
+  if (element['closest']) {
+    return element['closest']('.' + spf.config.get('nolink-class'));
+  }
   return spf.dom.getAncestor(element, function(node) {
     return spf.dom.classlist.contains(node, /** @type {string} */ (
         spf.config.get('nolink-class')));
@@ -134,7 +140,7 @@ spf.nav.getAncestorWithNoLinkClass_ = function(element) {
 spf.nav.getAncestorWithHref_ = function(element, parent) {
   return spf.dom.getAncestor(element, function(node) {
     // Images in IE10 can have an href.
-    return node.href && node.tagName.toLowerCase() != 'img';
+    return node.href && ['img', 'use'].indexOf(node.tagName.toLowerCase()) < 0;
   }, parent);
 };
 
