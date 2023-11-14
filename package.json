@@ -12,7 +12,6 @@
     "url": "https://github.com/youtube/spfjs/issues"
   },
   "scripts": {
-    "prepublish": "bower install && bin/configure.js",
     "build": "ninja",
     "build-all": "ninja all",
     "build-spf": "ninja spf spf-debug spf-trace",
